@@ -1,0 +1,4 @@
+{
+	"releaseDate" : "@releaseDate@",
+	"releaseLink" : "https://raw.githubusercontent.com/DSATool/NamesPlugin/master/release/Names_@releaseDate@.zip"
+}

@@ -1,6 +1,10 @@
 {
-	"releaseDate" : "2017-10-13_21-00",
-	"previousReleaseDate" : "2017-05-19_18-00",
-	"previousReleaseLink" : "https://raw.githubusercontent.com/DSATool/NamesPlugin/master/release/Names_2017-05-19_18-00.zip",
-	"updateInfo" : "https://raw.githubusercontent.com/DSATool/NamesPlugin/master/release/update-info.json"
+	"releaseDate" : "2018-02-27_18-00",
+	"previousReleaseDate" : "2017-10-13_21-00",
+	"previousReleaseLink" : "https://raw.githubusercontent.com/DSATool/NamesPlugin/master/release/Names_2017-10-13_21-00.zip",
+	"updateInfo" : "https://raw.githubusercontent.com/DSATool/NamesPlugin/master/release/update-info.json",
+	"signatureProviderName" : "SunEC",
+	"signatureKeyAlgorithm" : "EC",
+	"signatureAlgorithm" : "SHA512withECDSA",
+	"signatureKey" : "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEL3vHM1uKqXbwzTr9T2w4s+dlEUALjhWham9Ng7/61vlXV2/Nmv3kS0ODRikQ///R8Y2uTlMLah4zIs+vsZapXA=="
 }

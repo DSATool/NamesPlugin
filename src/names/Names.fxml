@@ -8,8 +8,8 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import dsatool.util.ReactiveComboBox?>
-<?import dsatool.util.ReactiveSpinner?>
+<?import dsatool.ui.ReactiveComboBox?>
+<?import dsatool.ui.ReactiveSpinner?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" styleClass="background" >
    <left>

@@ -17,7 +17,7 @@ package names;
 
 import dsa41basis.util.DSAUtil;
 import dsatool.resources.ResourceManager;
-import dsatool.util.ReactiveSpinner;
+import dsatool.ui.ReactiveSpinner;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;

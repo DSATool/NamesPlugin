@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2017 DSATool team
  *
@@ -14,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package names;
+
 import dsatool.gui.Main;
 import dsatool.plugins.Plugin;
 import dsatool.util.ErrorLogger;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
-import names.NamesController;
 
 /**
  * A plugin for generation of random names
@@ -34,7 +34,7 @@ public class Names extends Plugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see plugins.Plugin#getPluginName()
 	 */
 	@Override
@@ -44,7 +44,7 @@ public class Names extends Plugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see plugins.Plugin#initialize()
 	 */
 	@Override
@@ -58,7 +58,7 @@ public class Names extends Plugin {
 			fxmlLoader.setController(controller);
 
 			try {
-				pane = fxmlLoader.load(getClass().getResource("names/Names.fxml").openStream());
+				pane = fxmlLoader.load(getClass().getResource("Names.fxml").openStream());
 			} catch (final Exception e) {
 				ErrorLogger.logError(e);
 			}

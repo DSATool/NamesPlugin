@@ -17,9 +17,6 @@ package names;
 
 import dsatool.gui.Main;
 import dsatool.plugins.Plugin;
-import dsatool.util.ErrorLogger;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.BorderPane;
 
 /**
  * A plugin for generation of random names
@@ -50,25 +47,17 @@ public class Names extends Plugin {
 	@Override
 	public void initialize() {
 		Main.addDetachableToolComposite("Sonstiges", "Namen", 300, 200, () -> {
-			BorderPane pane = null;
-			final FXMLLoader fxmlLoader = new FXMLLoader();
-
 			controller = new NamesController();
+			getNotifications = true;
 
-			fxmlLoader.setController(controller);
-
-			try {
-				pane = fxmlLoader.load(getClass().getResource("Names.fxml").openStream());
-			} catch (final Exception e) {
-				ErrorLogger.logError(e);
-			}
-
-			controller.prepare();
-
-			return pane;
+			return controller.getRoot();
 		});
 	}
 
 	@Override
-	protected void load() {}
+	protected void load() {
+		if (controller != null) {
+			controller.prepare();
+		}
+	}
 }

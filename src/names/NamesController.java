@@ -18,13 +18,18 @@ package names;
 import dsa41basis.util.DSAUtil;
 import dsatool.resources.ResourceManager;
 import dsatool.ui.ReactiveSpinner;
+import dsatool.util.ErrorLogger;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.BorderPane;
 import jsonant.value.JSONObject;
 
 public class NamesController {
+	BorderPane pane;
 	@FXML
 	private ReactiveSpinner<Integer> count;
 	@FXML
@@ -41,6 +46,34 @@ public class NamesController {
 	private ReactiveSpinner<Integer> noble;
 
 	JSONObject generators;
+
+	public NamesController() {
+		final FXMLLoader fxmlLoader = new FXMLLoader();
+
+		fxmlLoader.setController(this);
+
+		try {
+			pane = fxmlLoader.load(getClass().getResource("Names.fxml").openStream());
+		} catch (final Exception e) {
+			ErrorLogger.logError(e);
+		}
+
+		male.valueProperty().addListener((e, oldV, newV) -> female.getValueFactory().setValue(100 - newV));
+		female.valueProperty().addListener((e, oldV, newV) -> male.getValueFactory().setValue(100 - newV));
+
+		middleClass.valueProperty().addListener((e, oldV, newV) -> {
+			if (newV + noble.getValue() > 100) {
+				noble.getValueFactory().setValue(100 - newV);
+			}
+		});
+		noble.valueProperty().addListener((e, oldV, newV) -> {
+			if (newV + middleClass.getValue() > 100) {
+				middleClass.getValueFactory().setValue(100 - newV);
+			}
+		});
+
+		prepare();
+	}
 
 	@FXML
 	private void create() {
@@ -64,23 +97,13 @@ public class NamesController {
 		results.setText(resultsText.toString());
 	}
 
+	public Node getRoot() {
+		return pane;
+	}
+
 	public void prepare() {
 		generators = ResourceManager.getResource("data/Namen");
 		culture.setItems(FXCollections.observableArrayList(generators.keySet()));
 		culture.getSelectionModel().select(0);
-
-		male.valueProperty().addListener((e, oldV, newV) -> female.getValueFactory().setValue(100 - newV));
-		female.valueProperty().addListener((e, oldV, newV) -> male.getValueFactory().setValue(100 - newV));
-
-		middleClass.valueProperty().addListener((e, oldV, newV) -> {
-			if (newV + noble.getValue() > 100) {
-				noble.getValueFactory().setValue(100 - newV);
-			}
-		});
-		noble.valueProperty().addListener((e, oldV, newV) -> {
-			if (newV + middleClass.getValue() > 100) {
-				middleClass.getValueFactory().setValue(100 - newV);
-			}
-		});
 	}
 }

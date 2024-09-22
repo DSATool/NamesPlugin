@@ -15,47 +15,47 @@
    <left>
       <VBox spacing="2" >
          <HBox spacing="2" >
-         	<Label text="Erzeuge " maxHeight="Infinity" />
+            <Label text="Erzeuge " maxHeight="Infinity" />
             <ReactiveSpinner fx:id="count" imin="1" imax="99" initialValue="1" HBox.hgrow="NEVER" prefWidth="60" editable="true" />
             <ReactiveComboBox fx:id="culture" />
          </HBox>
          <TitledPane text="Geschlecht">
          	<HBox>
-         		<VBox>
-         			<Label text="männlich" />
-         			<HBox>
-         				<ReactiveSpinner fx:id="male" imin="0" imax="100" initialValue="50" HBox.hgrow="ALWAYS" prefWidth="80" editable="true" />
-         				<Label text=" %" />
-         			</HBox>
-         		</VBox>
-         		<Label maxWidth="Infinity" HBox.hgrow="ALWAYS" />
-         		<VBox>
-         			<Label text="weiblich" />
-         			<HBox>
-         				<ReactiveSpinner fx:id="female" imin="0" imax="100" initialValue="50" HBox.hgrow="ALWAYS" prefWidth="80" editable="true" />
-         				<Label text=" %" />
-         			</HBox>
-         		</VBox>
-         	</HBox>
+         	   <VBox>
+                  <Label text="männlich" />
+                  <HBox>
+                     <ReactiveSpinner fx:id="male" imin="0" imax="100" initialValue="50" HBox.hgrow="ALWAYS" prefWidth="80" editable="true" />
+                     <Label text=" %" />
+                  </HBox>
+               </VBox>
+               <Label maxWidth="Infinity" HBox.hgrow="ALWAYS" />
+               <VBox>
+                  <Label text="weiblich" />
+                  <HBox>
+                     <ReactiveSpinner fx:id="female" imin="0" imax="100" initialValue="50" HBox.hgrow="ALWAYS" prefWidth="80" editable="true" />
+                     <Label text=" %" />
+                  </HBox>
+               </VBox>
+            </HBox>
          </TitledPane>
          <TitledPane text="Stand">
-         	<HBox>
-         		<VBox>
-         			<Label text="bürgerlich" />
-         			<HBox>
-         				<ReactiveSpinner fx:id="middleClass" imin="0" imax="100" initialValue="80" HBox.hgrow="ALWAYS" prefWidth="80" editable="true" />
-         				<Label text=" %" />
-         			</HBox>
-         		</VBox>
-         		<Label maxWidth="Infinity" HBox.hgrow="ALWAYS" />
-         		<VBox>
-         			<Label text="adlig" />
-         			<HBox>
-         				<ReactiveSpinner fx:id="noble" imin="0" imax="100" initialValue="10" HBox.hgrow="ALWAYS" prefWidth="80" editable="true" />
-         				<Label text=" %" />
-         			</HBox>
-         		</VBox>
-         	</HBox>
+            <HBox>
+               <VBox>
+                  <Label text="bürgerlich" />
+                  <HBox>
+                     <ReactiveSpinner fx:id="middleClass" imin="0" imax="100" initialValue="80" HBox.hgrow="ALWAYS" prefWidth="80" editable="true" />
+                     <Label text=" %" />
+                  </HBox>
+               </VBox>
+               <Label maxWidth="Infinity" HBox.hgrow="ALWAYS" />
+               <VBox>
+                  <Label text="adlig" />
+                  <HBox>
+                     <ReactiveSpinner fx:id="noble" imin="0" imax="100" initialValue="10" HBox.hgrow="ALWAYS" prefWidth="80" editable="true" />
+                     <Label text=" %" />
+                  </HBox>
+               </VBox>
+            </HBox>
          </TitledPane>
          <Button text="Erzeugen" onAction="#create" />
       </VBox>
